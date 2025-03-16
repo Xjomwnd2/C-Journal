@@ -11,9 +11,7 @@ class Program
 
         while (running)
         {
-            DisplayMenu();
-            Console.Write("What would you like to do? ");
-            string choice = Console.ReadLine().Trim(); // Trim spaces
+            string choice = DisplayMenu(); // Get user input
 
             switch (choice)
             {
@@ -34,25 +32,22 @@ class Program
                     Console.WriteLine("Thank you for using the Journal Program. Goodbye!");
                     break;
                 default:
-                    Console.WriteLine("Invalid option. Please try again.");
+                    Console.WriteLine("⚠ Invalid option. Please enter a number between 1-5.");
                     break;
             }
-
-            Console.WriteLine();
         }
     }
 
     static string DisplayMenu()
-{
-    Console.WriteLine("\n===== JOURNAL MENU =====");
-    Console.WriteLine("1. Write a new entry");
-    Console.WriteLine("2. Display the journal");
-    Console.WriteLine("3. Save the journal to a file");
-    Console.WriteLine("4. Load the journal from a file");
-    Console.WriteLine("5. Quit");
-    Console.Write("Enter your choice: ");
+    {
+        Console.WriteLine("\n===== JOURNAL MENU =====");
+        Console.WriteLine("1. Write a new entry");
+        Console.WriteLine("2. Display the journal");
+        Console.WriteLine("3. Save the journal to a file");
+        Console.WriteLine("4. Load the journal from a file");
+        Console.WriteLine("5. Quit");
+        Console.Write("Enter your choice: ");
 
-    return Console.ReadLine().Trim(); // Returns user input directly
-}
-
+        return Console.ReadLine().Trim();
+    }
 }
